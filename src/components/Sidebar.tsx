@@ -124,7 +124,7 @@ export function Sidebar({ projetoId, projetoNome }: Props) {
       </nav>
 
       <div className="px-5 py-3 border-t border-slate-800 text-[11px] text-slate-500">
-        v0.1 · MVP · localStorage
+        v0.1 · MVP · Render + Postgres
       </div>
     </aside>
   );
