@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.card {
+  @apply bg-white rounded-lg border border-slate-200 shadow-sm p-4;
+}
+.btn {
+  @apply inline-flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium transition-colors;
+}
+.btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700; }
+.btn-secondary { @apply btn bg-slate-100 text-slate-900 hover:bg-slate-200; }
+.btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+.input {
+  @apply w-full px-2.5 py-1.5 rounded-md border border-slate-300 text-sm
+    focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent;
+}
+.label { @apply block text-xs font-medium text-slate-600 mb-1; }
+.table { @apply w-full text-sm; }
+.table th { @apply text-left font-semibold text-slate-600 px-2 py-1.5 border-b border-slate-200; }
+.table td { @apply px-2 py-1.5 border-b border-slate-100; }
+.table tr:hover td { @apply bg-slate-50; }
+.kpi-value { @apply text-2xl font-bold text-slate-900; }
+.kpi-label { @apply text-xs text-slate-500 uppercase tracking-wide; }
+.section-title { @apply text-lg font-semibold text-slate-900 mb-3; }
+.h1 { @apply text-2xl font-bold text-slate-900; }
+.h2 { @apply text-xl font-semibold text-slate-900; }

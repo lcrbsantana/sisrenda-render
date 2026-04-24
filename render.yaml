@@ -1,0 +1,24 @@
+databases:
+  - name: sisrenda-db
+    plan: free
+    databaseName: sisrenda
+    user: sisrenda
+
+services:
+  - type: web
+    name: sisrenda-web
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm ci --include=dev && npx prisma db push --accept-data-loss && npm run build && npm run db:seed
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sisrenda-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
